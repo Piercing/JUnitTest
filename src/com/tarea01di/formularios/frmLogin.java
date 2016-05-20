@@ -1,7 +1,6 @@
 package com.tarea01di.formularios;
 
 import com.tarea01.utilidades.Datos;
-import java.util.Arrays;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,7 +11,8 @@ import javax.swing.JOptionPane;
  */
 public class frmLogin extends javax.swing.JFrame {
 
-    private Datos misDatos;
+    // Instanciar un objeto de tipo 'datos'  para cargar los datos de los usuarios
+    private Datos misDatos = new Datos();
 
     public void setDatos(Datos misDatos) {
         this.misDatos = misDatos;
@@ -93,23 +93,9 @@ public class frmLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jbtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarActionPerformed
 
-        System.out.print(jTextFieldUsuario.getText());
-        System.out.print(new String(jPasswordField.getPassword()));
-
-        String clave = jTextFieldUsuario.getText();
-        String clave2 = new String(jPasswordField.getPassword());
-       // System.out.print("Lista usuarios: " + Datos.usuarios);
-
-        //Usuario datosUser [] = misDatos.getUsuarios();
-//        if(!clave.equalsIgnoreCase("Carlos") || !clave2.equals("123")){
-//            JOptionPane.showMessageDialog(rootPane, "Usuario o clave incorrecto");
-//            jTextFieldUsuario.setText("");
-//            jPasswordField.setText("");
-//            jTextFieldUsuario.requestFocusInWindow();
-//            return;
-//        }
         if (!misDatos.validarUsuario(jTextFieldUsuario.getText(),
                 new String(jPasswordField.getPassword()))) {
             JOptionPane.showMessageDialog(null, "Usuario o clave incorrecto");

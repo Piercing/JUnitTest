@@ -22,18 +22,19 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
     private String clave;
     private String usuario;
     private Datos misDatos;
-    
+
     public void setDatos(Datos misDatos) {
         this.misDatos = misDatos;
     }
+
     public void setClave(String clave) {
         this.clave = clave;
     }
+
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-  
     /**
      * Creates new form frmTarea01DI
      */
@@ -130,6 +131,11 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
         });
 
         jButtonInicoHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tarea01/images/help_64x64.jpg"))); // NOI18N
+        jButtonInicoHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInicoHelpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDesktopPaneEscritorioLayout = new javax.swing.GroupLayout(jDesktopPaneEscritorio);
         jDesktopPaneEscritorio.setLayout(jDesktopPaneEscritorioLayout);
@@ -186,14 +192,17 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
     private void jButtonAbrirGestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirGestionActionPerformed
 
         JDialogGestionAlumnado misAlumnos = new JDialogGestionAlumnado(this, rootPaneCheckingEnabled);
-        jButtonAbrirGestion.addActionListener((ActionEvent e) -> {
-            misAlumnos.setVisible(true);
-        });
+
+        misAlumnos.setVisible(true);
     }//GEN-LAST:event_jButtonAbrirGestionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonInicoHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicoHelpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicoHelpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,7 +225,7 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
 
