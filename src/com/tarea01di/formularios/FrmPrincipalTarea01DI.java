@@ -1,5 +1,6 @@
 package com.tarea01di.formularios;
 
+import com.tarea01.utilidades.Datos;
 import com.tarea01.utilidades.DesktopConFondo;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -18,6 +19,21 @@ import javax.help.HelpSetException;
  */
 public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
 
+    private String clave;
+    private String usuario;
+    private Datos misDatos;
+    
+    public void setDatos(Datos misDatos) {
+        this.misDatos = misDatos;
+    }
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+  
     /**
      * Creates new form frmTarea01DI
      */
@@ -138,10 +154,11 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
-                .addGroup(jDesktopPaneEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAbrirGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonInicoHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDesktopPaneEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonInicoHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPaneEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAbrirGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
 
@@ -194,15 +211,12 @@ public class FrmPrincipalTarea01DI extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipalTarea01DI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipalTarea01DI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipalTarea01DI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmPrincipalTarea01DI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 

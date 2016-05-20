@@ -63,10 +63,12 @@
                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="56" max="-2" attributes="0"/>
                   <EmptySpace pref="217" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" linkSize="1" alignment="3" min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="jButtonAbrirGestion" linkSize="1" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButtonInicoHelp" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton1" linkSize="1" alignment="3" min="-2" pref="86" max="-2" attributes="0"/>
+                          <Component id="jButtonAbrirGestion" linkSize="1" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
