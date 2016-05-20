@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE map
+PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN"
+"http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="1.0">
+   <mapID target="portada" url="html/portada.html" />
+   <mapID target="ventana_prologo" url="html/prologo.html" />  
+   <mapID target="ventana_caracteristicas" url="html/caracteristicas.html" />
+   <mapID target="ventana_instalar" url="html/instalacion.html" />
+   <mapID target="ventana_iniciar" url="html/iniciar.html" />
+   <mapID target="ventana_alta" url="html/alta.html" />
+   <mapID target="ventana_guardar" url="html/guardar.html" />
+   <mapID target="ventana_cancelar" url="html/cancelar.html" />
+   <mapID target="ventana_salir" url="html/salir.html" />
+   <mapID target="ventana_faq" url="html/faq.html" />
+   <mapID target="ventana_glosario" url="html/glosario.html" />
+</map>

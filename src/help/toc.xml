@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="1.0">
+        <tocitem text="Gestión alumnos FP" target="portada">
+        <tocitem text="Prólogo" target="ventana_prologo"/>
+        <tocitem text="Características del sistema" target="ventana_caracteristicas"/>
+        <tocitem text="Instalar aplicación" target="ventana_instalar"/>
+        <tocitem text="Iniciar la aplicación" target="ventana_iniciar"/>
+        <tocitem text="Dar de alta un alumno" target="ventana_alta"/>
+        <tocitem text="Gurdar datos alumno" target="ventana_guardar"/>
+        <tocitem text="Cancelar una operación" target="ventana_cancelar"/>
+        <tocitem text="Salir de al aplicación" target="ventana_salir"/>
+        <tocitem text="F.A.Q" target="ventana_faq"/>
+        <tocitem text="Glosario" target="ventana_glosario"/>
+    </tocitem>
+</toc>

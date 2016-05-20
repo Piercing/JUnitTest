@@ -1,0 +1,15 @@
+name: Javahelp 2.0_05 Source
+package_id: javahelp
+package_version: 2.0_05
+distribution_version: 1
+platform_id: all
+platform_vendor: all
+platform_version: all
+platform_arch: all
+distribution_type: src
+distribution_flavor: 
+distribution_file_uuid_string: openlogic-javahelp-2.0_05-all-src-1
+distribution_file_uuid: ee82f5ad769a28e165d81ce47834b79a47d5a940e75150eb6d82509ecbc94150
+description: |+ Javahelp 2.0_05 Source
+distribution_notes: |+ .
+release_date: 2008-01-31
