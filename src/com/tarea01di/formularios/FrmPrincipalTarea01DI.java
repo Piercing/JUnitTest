@@ -1,6 +1,6 @@
 package com.tarea01di.formularios;
 
-import com.tarea01.utilidades.Datos;
+import com.tarea08.model.Datos;
 import com.tarea01.utilidades.DesktopConFondo;
 import java.awt.event.ActionEvent;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.tarea01.utilidades;
+package com.tarea08.model;
 
 /**
  *
@@ -42,13 +42,20 @@ public class Datos {
      */
     public boolean validarUsuario(String usuario, String clave) {
 
+        System.out.print("PRUEBA DE INTEGRACIÓN 3:"
+                + " Entró en la capa de persistencia y ejecutó la consulta\n");
+
         boolean aux = false;
         for (int i = 0; i < contaUsuarios; i++) {
             if (misUsuarios[i].getIdUsuario().equalsIgnoreCase(usuario)
                     && misUsuarios[i].getClave().equals(clave)) {
+                System.out.print("PRUEBA DE INTEGRACIÓN 4: "
+                        + "Completó la consulta con éxito\n");
                 return !aux;
             }
         }
+        System.out.print("PRUEBA DE INTEGRACIÓN 4.1: "
+                + "Completó la consulta con éxito, fallo al autenticarse\n");
         return aux;
     }
 }

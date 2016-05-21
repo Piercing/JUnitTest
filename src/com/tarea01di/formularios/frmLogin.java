@@ -1,6 +1,6 @@
 package com.tarea01di.formularios;
 
-import com.tarea01.utilidades.Datos;
+import com.tarea08.model.Datos;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -96,9 +96,21 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void jbtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarActionPerformed
 
+        if (jTextFieldUsuario.getText().equals("") || jPasswordField.getPassword().equals("")) {
+
+            JOptionPane.showMessageDialog(null, "Campos Usuario o Clave no puden estar vacios");
+
+            System.out.print("PRUEBA DE INTEGRACIÓN 1: Entramos en el caso "
+                    + "de que los campos Usuario o Clave estén vacios\n");
+            return;
+        }
+        System.out.print("PRUEBA DE INTEGRACIÓN 2: Entramos en el caso "
+                + "de que los campos Usuario o Clave no estén vacios\n");
+        
         if (!misDatos.validarUsuario(jTextFieldUsuario.getText(),
                 new String(jPasswordField.getPassword()))) {
             JOptionPane.showMessageDialog(null, "Usuario o clave incorrecto");
+
             jTextFieldUsuario.setText("");
             jPasswordField.setText("");
             jTextFieldUsuario.requestFocusInWindow();

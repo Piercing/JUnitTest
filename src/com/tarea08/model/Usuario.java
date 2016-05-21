@@ -1,9 +1,9 @@
-package com.tarea01.utilidades;
+package com.tarea08.model;
 
 /**
  *
  * @author merlosalbarracin@gmail.com
- * @version 1.0 
+ * @version 1.0
  */
 public class Usuario {
 

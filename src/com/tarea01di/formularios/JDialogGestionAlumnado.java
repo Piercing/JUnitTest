@@ -12,8 +12,6 @@ import java.net.*;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JButton;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -780,19 +778,17 @@ public class JDialogGestionAlumnado extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                JDialogGestionAlumnado dialog = new JDialogGestionAlumnado(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-
-                try {
+        java.awt.EventQueue.invokeLater(() -> {
+            JDialogGestionAlumnado dialog = new JDialogGestionAlumnado(new javax.swing.JFrame(), true);
+            dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            dialog.setVisible(true);
+            
+            try {
 //                    // Cargar el fichero de ayuda
 //                    File fichero = new File("/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/"
 //                            + "merlos_albarracin_juan_carlos_DI04_Tarea_E1/build/classes/help/help_set.hs");
@@ -813,17 +809,17 @@ public class JDialogGestionAlumnado extends javax.swing.JDialog {
 //                    
 //                    // Ayuda al Ayuda al hacer click en el JButtonHelp
 //                    hb.enableHelpOnButton(JDialogGestionAlumnado.jButtomHelp, "portada", helpset);
-//                    
+//
 //                    // Ayuda al pulsar F1 sobre la ventana de este formulario, 
 //                    // le paso el Formulario en el que estoy
 //                    hb.enableHelp(dialog.getContentPane(), "vantana_portada", helpset);
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                
+                
+                
+                
+                
+                
+                
 //                URL hsURL = HelpSet.findHelpSet(null, "/help.hs");
 //                HelpSet hs = new HelpSet(null, hsURL);
 //                HelpBroker hb = hs.createHelpBroker();
@@ -831,10 +827,9 @@ public class JDialogGestionAlumnado extends javax.swing.JDialog {
 //                // Asociar ayuda botón F1
 //                hb.enableHelpKey(SwingUtilities.getRootPane(dialog), "Introducción", hs);
 //                // Asociar componente a una página que se muestre al pulsar la tecla de ayuda F1
-                } catch (IllegalArgumentException e) {
-                    JOptionPane.showMessageDialog(null, "Fichero HelpSet no encontrado, error: "
-                            + Arrays.toString(e.getStackTrace()));
-                }
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(null, "Fichero HelpSet no encontrado, error: "
+                        + Arrays.toString(e.getStackTrace()));
             }
         });
     }
