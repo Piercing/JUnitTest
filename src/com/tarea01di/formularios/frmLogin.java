@@ -1,6 +1,7 @@
 package com.tarea01di.formularios;
 
 import com.tarea08.model.Datos;
+import java.util.Arrays;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -41,33 +42,34 @@ public class frmLogin extends javax.swing.JFrame {
         jbtnAceptar = new javax.swing.JButton();
         jLabelImagenEntrada = new javax.swing.JLabel();
         jbtnCancelar1 = new javax.swing.JButton();
+        jRepitePasswordField = new javax.swing.JPasswordField();
+        jLabelClave1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ACCESO");
         setMinimumSize(new java.awt.Dimension(415, 250));
-        setPreferredSize(new java.awt.Dimension(415, 180));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelUsuario.setText("Usuario:");
-        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 60, 20));
+        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 60, 20));
 
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
+        getContentPane().add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 120, -1));
 
         jLabelClave.setText("   Clave:");
-        getContentPane().add(jLabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 50, -1));
+        getContentPane().add(jLabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 50, -1));
 
         jPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 120, -1));
+        getContentPane().add(jPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 120, -1));
 
         jbtnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tarea01/images/accept_Check.png"))); // NOI18N
         jbtnAceptar.setText("Aceptar");
@@ -90,44 +92,75 @@ public class frmLogin extends javax.swing.JFrame {
         });
         getContentPane().add(jbtnCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 140, -1));
 
+        jRepitePasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRepitePasswordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRepitePasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 120, -1));
+
+        jLabelClave1.setText("Reperir clave:");
+        getContentPane().add(jLabelClave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 90, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     private void jbtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarActionPerformed
 
-        if (jTextFieldUsuario.getText().equals("") || jPasswordField.getPassword().equals("")) {
+        if (jTextFieldUsuario.getText().equals("")
+                || jPasswordField.getPassword().equals("")
+                || jRepitePasswordField.getPassword().equals("")) {
 
-            JOptionPane.showMessageDialog(null, "Campos Usuario o Clave no puden estar vacios");
+            JOptionPane.showMessageDialog(null,
+                    "Campos Usuario, Clave y Repetir clave no puden estar vacios");
+            jTextFieldUsuario.requestFocusInWindow();
 
             System.out.print("PRUEBA DE INTEGRACIÓN 1: Entramos en el caso "
                     + "de que los campos Usuario o Clave estén vacios\n");
             return;
         }
-        System.out.print("PRUEBA DE INTEGRACIÓN 2: Entramos en el caso "
-                + "de que los campos Usuario o Clave no estén vacios\n");
-        
-        if (!misDatos.validarUsuario(jTextFieldUsuario.getText(),
-                new String(jPasswordField.getPassword()))) {
-            JOptionPane.showMessageDialog(null, "Usuario o clave incorrecto");
 
-            jTextFieldUsuario.setText("");
+        char[] pass = jPasswordField.getPassword();
+        char[] rPass = jRepitePasswordField.getPassword();
+
+        if (Arrays.equals(pass, rPass)) {
+
+            System.out.print("PRUEBA DE INTEGRACIÓN 2: Entramos en el caso "
+                    + "de que los campos Usuario o Clave no estén vacios\n");
+
+            if (!misDatos.validarUsuario(jTextFieldUsuario.getText(),
+                    new String(jPasswordField.getPassword()))) {
+                JOptionPane.showMessageDialog(null, "Usuario o clave incorrecto");
+                jTextFieldUsuario.requestFocusInWindow();
+                jTextFieldUsuario.setText("");
+                jPasswordField.setText("");
+                jRepitePasswordField.setText("");
+                return;
+            }
+            FrmPrincipalTarea01DI miPrincipal = new FrmPrincipalTarea01DI();
+            // Antes de hacer visible el formulario principal
+            this.setVisible(false);
+            // Le pasamos los datos del usuario
+            miPrincipal.setDatos(misDatos);
+            // Le pasamos la clave que ya ha introducido antes en el campo
+            // llegados aquí es por que ya se ha validado la clave y es correcta.
+            miPrincipal.setClave(new String(jPasswordField.getPassword()));
+            // Establecemos el usuario que se va a loguear
+            miPrincipal.setUsuario(jTextFieldUsuario.getText());
+            // Maximizamos el formulario (ventana)
+            miPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            // La hacemos visible
+            miPrincipal.setVisible(true);
+        } else {
+
+            JOptionPane.showMessageDialog(null,
+                    "Campos Clave y Repetir clave deben de coincidir");
+            jPasswordField.requestFocusInWindow();
             jPasswordField.setText("");
-            jTextFieldUsuario.requestFocusInWindow();
-            return;
+            jRepitePasswordField.setText("");
         }
-        FrmPrincipalTarea01DI miPrincipal = new FrmPrincipalTarea01DI();
-        //antes de hacer visible el formulario principal
-        this.setVisible(false);
-        //Le pasamos la clave que ya ha introducido antes en el campo
-        //llegados aquí es por que ya se ha validado la clave y es correcta.
-        miPrincipal.setClave(new String(jPasswordField.getPassword()));
-        //Establecemos el usuario que se va a loguear
-        miPrincipal.setUsuario(jTextFieldUsuario.getText());
-        //maximizamos el formulario (ventana)
-        miPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //La hacemos visible
-        miPrincipal.setVisible(true);
+
     }//GEN-LAST:event_jbtnAceptarActionPerformed
 
     private void jTextFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsuarioActionPerformed
@@ -141,6 +174,10 @@ public class frmLogin extends javax.swing.JFrame {
     private void jbtnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelar1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jbtnCancelar1ActionPerformed
+
+    private void jRepitePasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRepitePasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRepitePasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,16 +193,21 @@ public class frmLogin extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmLogin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -179,10 +221,12 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelClave;
+    private javax.swing.JLabel jLabelClave1;
     private javax.swing.JLabel jLabelImagenEntrada;
     private javax.swing.JLabel jLabelUsuario;
-    private javax.swing.JPasswordField jPasswordField;
-    private javax.swing.JTextField jTextFieldUsuario;
+    public static javax.swing.JPasswordField jPasswordField;
+    public static javax.swing.JPasswordField jRepitePasswordField;
+    private static javax.swing.JTextField jTextFieldUsuario;
     private javax.swing.JButton jbtnAceptar;
     private javax.swing.JButton jbtnCancelar1;
     // End of variables declaration//GEN-END:variables

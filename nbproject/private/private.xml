@@ -5,8 +5,11 @@
         <group>
             <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/src/com/tarea01di/formularios/JDialogGestionAlumnado.java</file>
             <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/src/com/tarea01di/formularios/FrmPrincipalTarea01DI.java</file>
-            <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/test/com/tarea08/model/UsuarioTest.java</file>
+            <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/src/com/tarea08/model/Datos.java</file>
             <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/src/com/tarea08/model/Usuario.java</file>
+            <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/test/com/tarea08/model/DatosTest.java</file>
+            <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/test/com/tarea01di/formularios/frmLoginTest.java</file>
+            <file>file:/Users/macbookpro/Documents/GRADO/DI/TAREAS_DI/TAREA04_DI/merlos_albarracin_juan_carlos_DI04_Tarea_E1/src/com/tarea01di/formularios/frmLogin.java</file>
         </group>
     </open-files>
 </project-private>

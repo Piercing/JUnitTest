@@ -529,18 +529,18 @@ public class JDialogGestionAlumnado extends javax.swing.JDialog {
          * ************* validando campos antes de guardar *******************
          */
         // validando que el campo apellidos no esté vacío y no supere los 25 caracteres
-        if (jTextFieldApellidos.getText().equals("") || jTextFieldApellidos.getText().length() > 25) {
+        if (jTextFieldApellidos.getText().equals("") || jTextFieldApellidos.getText().length() > 50) {
             JOptionPane.showMessageDialog(rootPane,
-                    "Debe introducir unos apellidos y no superar los 25 caracteres");
+                    "Debe introducir unos apellidos y no superar los 50 caracteres");
             jTextFieldApellidos.setText("");
             jTextFieldApellidos.requestFocusInWindow();
             return;
         }
 
         // validando que el campo nombre no esté vacío y no supere los 50 caracteres
-        if (jTextFieldNombre.getText().equals("") || jTextFieldNombre.getText().length() > 50) {
+        if (jTextFieldNombre.getText().equals("") || jTextFieldNombre.getText().length() > 25) {
             JOptionPane.showMessageDialog(rootPane,
-                    "Debe introducir un nombre y no superar los 50 caracteres");
+                    "Debe introducir un nombre y no superar los 25 caracteres");
             jTextFieldNombre.setText("");
             jTextFieldNombre.requestFocusInWindow();
             return;
