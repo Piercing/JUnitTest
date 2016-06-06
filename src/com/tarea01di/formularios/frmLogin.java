@@ -124,11 +124,13 @@ public class frmLogin extends javax.swing.JFrame {
         char[] pass = jPasswordField.getPassword();
         char[] rPass = jRepitePasswordField.getPassword();
 
+        // Si los campos no están vacios, pasamos a comprobar si la claves coinciden
         if (Arrays.equals(pass, rPass)) {
 
-            System.out.print("PRUEBA DE INTEGRACIÓN 2: Entramos en el caso "
-                    + "de que los campos Usuario o Clave no estén vacios\n");
+            System.out.print("PRUEBA DE INTEGRACIÓN 2: Entramos en el caso de "
+                    + "que las contraseñas coincidan\n");
 
+            // Validar datos
             if (!misDatos.validarUsuario(jTextFieldUsuario.getText(),
                     new String(jPasswordField.getPassword()))) {
                 JOptionPane.showMessageDialog(null, "Usuario o clave incorrecto");

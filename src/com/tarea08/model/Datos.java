@@ -50,7 +50,7 @@ public class Datos {
             if (misUsuarios[i].getIdUsuario().equalsIgnoreCase(usuario)
                     && misUsuarios[i].getClave().equals(clave)) {
                 System.out.print("PRUEBA DE INTEGRACIÓN 4: "
-                        + "Completó la consulta con éxito\n");
+                        + "Completó la consulta con éxito, éxito al autenticarse\n");
                 return !aux;
             }
         }
